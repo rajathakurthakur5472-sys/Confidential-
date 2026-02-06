@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>For Kopal 💖</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -60,13 +59,13 @@
       position: absolute;
     }
 
-    /* Floating hearts */
+    /* floating hearts */
     .heart {
       position: absolute;
       color: white;
       font-size: 20px;
       animation: floatUp 6s linear infinite;
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     @keyframes floatUp {
@@ -88,48 +87,48 @@
     <p>Will you be my Valentine? 💘</p>
 
     <button id="yes" onclick="yesClicked()">Yes 💕</button>
-    <button id="no" onmouseover="moveNo()">No 🙈</button>
+    <button id="no" onmouseover="moveNo()" onclick="moveNo()">No 🙈</button>
   </div>
 
-  <!-- Romantic song -->
+  <!-- Romantic instrumental song -->
   <audio id="song" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_5c1c9c9a1d.mp3" type="audio/mpeg">
   </audio>
 
   <script>
     const noBtn = document.getElementById("no");
     const song = document.getElementById("song");
 
-    // Move NO button
     function moveNo() {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
     }
 
-    // Yes clicked
     function yesClicked() {
       song.play();
       document.body.innerHTML = `
         <div style="text-align:center;">
-          <h1 style="color:white;font-size:40px;">Yayyy Kopal 🥰💖</h1>
-          <p style="font-size:22px;color:white;">
-            You just made my Valentine special ❤️<br>
-            Now you can't say no 😌
+          <h1 style="color:white;font-size:38px;">Kopal 💖</h1>
+          <p style="font-size:22px;color:white;line-height:1.5;">
+            Tumhari ek YES ne mera din nahi,<br>
+            mera dil jeet liya 🥺❤️<br><br>
+            Shayad main perfect na hoon,<br>
+            par tumhare saath rehna chahta hoon 💫<br><br>
+            Happy Valentine 💐
           </p>
         </div>
       `;
       document.body.style.background = "linear-gradient(135deg,#ff3f6c,#ff758c)";
     }
 
-    // Create floating hearts
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
       heart.innerText = "❤️";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (20 + Math.random() * 20) + "px";
+      heart.style.fontSize = (18 + Math.random() * 22) + "px";
       document.body.appendChild(heart);
 
       setTimeout(() => {
